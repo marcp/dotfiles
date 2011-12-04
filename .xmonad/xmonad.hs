@@ -1,3 +1,4 @@
+import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import System.Exit
 import XMonad
@@ -114,6 +115,7 @@ myBorderWidth = 1
 
 
 -- Key bindings---------------------------------------------------------
+-- xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 myModMask = mod4Mask
  
 myNumlockMask = mod2Mask
@@ -131,16 +133,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_Print), spawn "sleep 0.2; scrot -s")
 
   -- Mute volume.
-  , ((0, 0x1008FF12),
-     spawn "amixer -q set Front toggle")
+  , ((0, xF86XK_AudioMute),
+     spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
-  , ((0, 0x1008FF11),
-     spawn "amixer -q set Front 10%-")
+  , ((0, xF86XK_AudioLowerVolume),
+     spawn "amixer -q set Master 5%-")
 
   -- Increase volume.
-  , ((0, 0x1008FF13),
-     spawn "amixer -q set Front 10%+")
+  , ((0, xF86XK_AudioRaiseVolume),
+     spawn "amixer -q set Master 5%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
