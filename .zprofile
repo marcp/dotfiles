@@ -1,1 +1,1 @@
-keychain --eval --agents ssh --nogui -Q -q id_rsa
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
