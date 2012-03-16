@@ -47,12 +47,9 @@ myWorkspaces = ["1:home","2:web","3:code", "4:com", "5:other"] ++ map show [6..9
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"              --> doShift "2:web"
-    , resource  =? "desktop_window"       --> doIgnore
+    [ resource  =? "desktop_window"       --> doIgnore
     , className =? "Gimp"                 --> doFloat
     , resource  =? "skype"                --> doFloat
-    , className =? "Gvim"                 --> doShift "3:code"
-    , className =? "com-pugh-sockso-Main" --> doShift "5:other"
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
