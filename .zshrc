@@ -31,3 +31,5 @@ export EDITOR="vim"
 export BROWSER="firefox"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+alias h="history | grep "
