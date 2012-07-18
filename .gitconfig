@@ -7,3 +7,9 @@
     co = checkout
 [color]
 	ui = true
+[diff]
+	tool = gvimdiff
+[merge]
+	tool = gvimdiff
+[difftool]
+	prompt = false
