@@ -88,7 +88,7 @@ myLayout = avoidStruts (
 -- Currently based on the ir_black theme.
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ffb6b0"
+myFocusedBorderColor = "#cf6a4c"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -278,7 +278,7 @@ customPP = defaultPP { ppCurrent = xmobarColor "#222222" "#888888". wrap "" ""
 
 fadeLogHook :: X ()
 fadeLogHook = fadeInactiveLogHook fadeAmount
-	where fadeAmount = 0.9
+	where fadeAmount = 0.1
 
 
 ------------------------------------------------------------------------
