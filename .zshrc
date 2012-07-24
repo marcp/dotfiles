@@ -33,3 +33,7 @@ export BROWSER="firefox"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias h="history | grep "
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+eval `dircolors /home/nick/.dircolors`

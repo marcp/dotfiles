@@ -29,7 +29,8 @@ myTerminal = "urxvt"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:home","2:web","3:code", "4:com", "5:other"] ++ map show [6..9]
+-- myWorkspaces = ["1:home","2:web","3:code", "4:com", "5:other"] ++ map show [6..9]
+myWorkspaces = map show [1..9]
 
 
 ------------------------------------------------------------------------
@@ -88,7 +89,7 @@ myLayout = avoidStruts (
 -- Currently based on the ir_black theme.
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#cf6a4c"
+myFocusedBorderColor = "#ffb6b0"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -278,7 +279,7 @@ customPP = defaultPP { ppCurrent = xmobarColor "#222222" "#888888". wrap "" ""
 
 fadeLogHook :: X ()
 fadeLogHook = fadeInactiveLogHook fadeAmount
-	where fadeAmount = 0.1
+	where fadeAmount = 0.9
 
 
 ------------------------------------------------------------------------
