@@ -11,6 +11,7 @@ ln -nfs $PWD/.inputrc $HOME/.inputrc
 ln -nfs $PWD/.lein/*.clj $HOME/.lein
 ln -nfs $PWD/.oh-my-zsh $HOME/.oh-my-zsh
 ln -nfs $PWD/.pentadactylrc $HOME/.pentadactylrc
+ln -nfs $PWD/.scheme_completion $HOME/.scheme_completion
 ln -nfs $PWD/.tmux.conf $HOME/.tmux.conf
 ln -nfs $PWD/.xinitrc $HOME/.xinitrc
 ln -nfs $PWD/.xmobarrc $HOME/.xmobarrc
