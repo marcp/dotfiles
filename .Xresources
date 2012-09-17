@@ -1,4 +1,4 @@
-#include "/home/nick/.colors/gslob"
+#include "/home/nick/.colors/solarized"
 
 Xft.dpi:        96
 Xft.antialias:  true

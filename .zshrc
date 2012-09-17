@@ -34,6 +34,11 @@ export BROWSER="firefox"
 
 alias h="history | grep "
 
+alias guard="~/.gem/ruby/1.9.1/bin/guard "
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 eval `dircolors /home/nick/.dircolors`
+
+# Disable autocorrect
+unsetopt correct_all
