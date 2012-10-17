@@ -10,6 +10,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
+import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Tabbed
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
@@ -66,10 +67,8 @@ myManageHook = composeAll
 --
 myLayout = avoidStruts (
     tiled |||
-    Mirror tiled |||
-    tabbed shrinkText tabConfig |||
-    Full |||
-    spiral (6/7))
+    simpleFloat |||
+    Full)
   where
     -- default tiling algorithm partitions the screen into two panes.
     tiled   = Tall nmaster delta ratio
@@ -86,10 +85,9 @@ myLayout = avoidStruts (
 
 ------------------------------------------------------------------------
 -- Colors and borders
--- Currently based on the ir_black theme.
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ffb6b0"
+myFocusedBorderColor = "#5a647e"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -100,12 +98,6 @@ tabConfig = defaultTheme {
     inactiveTextColor = "#EEEEEE",
     inactiveColor = "#000000"
 }
-
--- Color of current window title in xmobar.
-xmobarTitleColor = "#FFB6B0"
-
--- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "#CEFFAC"
 
 -- Width of the window border in pixels.
 myBorderWidth = 1
@@ -264,24 +256,6 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
   ]
 
-
--- Status bars and logging----------------------------------------------
-logHook' :: Handle ->  X ()
-logHook' h = dynamicLogWithPP $ customPP { ppOutput = hPutStrLn h }
-
-customPP :: PP
-customPP = defaultPP { ppCurrent = xmobarColor "#222222" "#888888". wrap "" ""
-                     , ppTitle =  shorten 80
-                     , ppSep =  "<fc=#aaaaaa> // </fc>"
-                     , ppHiddenNoWindows = xmobarColor "#333333" ""
-                     , ppUrgent = xmobarColor "#AFAFAF" "#333333" . wrap "!" ""
-                     }
-
-fadeLogHook :: X ()
-fadeLogHook = fadeInactiveLogHook fadeAmount
-	where fadeAmount = 0.9
-
-
 ------------------------------------------------------------------------
 -- Startup hook
 -- Perform an arbitrary action each time xmonad starts or is restarted
@@ -293,12 +267,8 @@ myStartupHook = return ()
 
 
 ------------------------------------------------------------------------
-main = do
-  h <- spawnPipe "xmobar"
-  xmonad $ withUrgencyHook NoUrgencyHook
-         $ defaults {
-      logHook = logHook' h  >> (fadeLogHook)
-      , manageHook = manageDocks <+> myManageHook
+main = xmonad $ withUrgencyHook NoUrgencyHook $ defaults {
+      manageHook = manageDocks <+> myManageHook
       , startupHook = setWMName "LG3D"
   }
 

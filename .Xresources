@@ -1,4 +1,4 @@
-#include "/home/nick/.colors/solarized"
+#include "/home/nick/.colors/b16/base16-railscasts.dark.xresources"
 
 Xft.dpi:        96
 Xft.antialias:  true
@@ -27,7 +27,7 @@ URxvt.boldfont:           xft:DejavuSansMono:pixelsize=12:Bold
 
 URxvt.scrollBar: off
 
-URxvt.perl-ext-common:  default,clipboard,tabbed,keyboard-select
+URxvt.perl-ext-common:  default,clipboard,keyboard-select
 
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
