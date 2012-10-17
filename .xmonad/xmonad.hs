@@ -67,6 +67,7 @@ myManageHook = composeAll
 --
 myLayout = avoidStruts (
     tiled |||
+    Mirror tiled |||
     simpleFloat |||
     Full)
   where
