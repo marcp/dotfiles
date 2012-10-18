@@ -88,7 +88,7 @@ myLayout = avoidStruts (
 -- Colors and borders
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#5a647e"
+myFocusedBorderColor = "#de935f"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {

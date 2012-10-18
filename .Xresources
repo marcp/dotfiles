@@ -1,4 +1,5 @@
-#include "/home/nick/.colors/b16/base16-railscasts.dark.xresources"
+!#include "/home/nick/.colors/b16/base16-railscasts.dark.xresources"
+#include "/home/nick/.colors/tomorrow-night"
 
 Xft.dpi:        96
 Xft.antialias:  true

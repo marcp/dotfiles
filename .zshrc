@@ -38,6 +38,7 @@ alias scheme="rlwrap -r -c -f $HOME/.scheme_completion scheme"
 alias ad="aplay --list-devices"
 alias transcribe="/home/nick/builds/transcribe/transcribe"
 alias par="pulseaudio --kill; pulseaudio --start"
+alias thin="bundle exec thin start"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
