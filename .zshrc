@@ -32,6 +32,8 @@ export BROWSER="firefox"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 alias h="history | grep "
 alias guard="~/.gem/ruby/1.9.1/bin/guard "
 alias scheme="rlwrap -r -c -f $HOME/.scheme_completion scheme"

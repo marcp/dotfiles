@@ -118,7 +118,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_p),
      spawn "exe=`dmenu_run` && eval \"exec $exe\"")
 
-  , ((modMask, xK_Print), spawn "sleep 0.2; scrot -s")
+  -- Take a screenshot
+  , ((0, xK_Print),
+     spawn "scrot '%Y-%m-%d.png' -e 'mv $f ~/screenshots/'")
+
+  -- Restart pulseaudio
+  , ((0, xK_Pause),
+     spawn "pulseaudio --kill; pulseaudio --start")
 
   -- Mute volume.
   , ((0, xF86XK_AudioMute),
