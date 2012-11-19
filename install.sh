@@ -21,3 +21,4 @@ ln -nfs $PWD/.xswap $HOME/.xswap
 ln -nfs $PWD/.zlogin $HOME/.zlogin
 ln -nfs $PWD/.zprofile $HOME/.zprofile
 ln -nfs $PWD/.zshrc $HOME/.zshrc
+ln -nfs $PWD/.ncmpcpp $HOME/.ncmpcpp

@@ -41,6 +41,20 @@ alias ad="aplay --list-devices"
 alias transcribe="/home/nick/builds/transcribe/transcribe"
 alias par="pulseaudio --kill; pulseaudio --start"
 alias thin="bundle exec thin start"
+alias mk="tmux kill-session -t "
+
+function ru() {
+    local pid=$(pgrep -af 'unicorn_rails' | grep master | awk '{print $1}')
+    kill -9 $pid
+    sleep 5
+    bundle exec unicorn_rails -c config/unicorn.development.rb -D
+}
+
+function hp() {
+    local origin=$(git remote -v | grep 'push' | awk -F '[:/]' '{print $2}')
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    hub pull-request -b $origin:$1 -h $origin:$branch -i $2
+}
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
