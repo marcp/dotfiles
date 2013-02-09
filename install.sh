@@ -21,3 +21,10 @@ ln -nfs $PWD/.xmobarrc $HOME/.xmobarrc
 ln -nfs $PWD/.xmonad $HOME/.xmonad
 ln -nfs $PWD/.Xresources $HOME/.Xresources
 ln -nfs $PWD/.xswap $HOME/.xswap
+ln -nfs $PWD/.zlogin $HOME/.zlogin
+ln -nfs $PWD/.zlogout $HOME/.zlogout
+ln -nfs $PWD/.zprezto $HOME/.zprezto
+ln -nfs $PWD/.zpreztorc $HOME/.zpreztorc
+ln -nfs $PWD/.zprofile $HOME/.zprofile
+ln -nfs $PWD/.zshenv $HOME/.zshenv
+ln -nfs $PWD/.zshrc $HOME/.zshrc
