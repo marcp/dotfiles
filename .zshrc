@@ -28,7 +28,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bi
 
 # The best
 export EDITOR="vim"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -54,6 +54,11 @@ function hp() {
     local origin=$(git remote -v | grep 'push' | awk -F '[:/]' '{print $2}')
     local branch=$(git rev-parse --abbrev-ref HEAD)
     hub pull-request -b $origin:$1 -h $origin:$branch -i $2
+}
+
+function mc() {
+    mkdir $1
+    cd $1
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

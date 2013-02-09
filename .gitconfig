@@ -13,3 +13,6 @@
 	tool = gvimdiff
 [difftool]
 	prompt = false
+[core]
+	autocrlf = input
+	excludesfile = ~/.cvsignore

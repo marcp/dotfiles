@@ -1,4 +1,6 @@
-xrdb -merge ~/.Xresources
+systemd --user &
+
+xrdb ~/.Xresources
 
 sh ~/.fehbg &
 
