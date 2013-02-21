@@ -26,6 +26,7 @@ alias transcribe="/home/nick/builds/transcribe/transcribe"
 alias par="pulseaudio --kill; pulseaudio --start"
 alias thin="bundle exec thin start"
 alias mk="tmux kill-session -t "
+alias v="fasd -fe vim"
 
 # Functions
 function ru() {

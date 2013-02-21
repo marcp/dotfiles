@@ -16,6 +16,8 @@ ln -nfs $PWD/.ncmpcpp $HOME/.ncmpcpp
 ln -nfs $PWD/.pentadactylrc $HOME/.pentadactylrc
 ln -nfs $PWD/.scheme_completion $HOME/.scheme_completion
 ln -nfs $PWD/.tmux.conf $HOME/.tmux.conf
+ln -nfs $PWD/.vim $HOME/.vim
+ln -nfs $PWD/.vimrc $HOME/.vimrc
 ln -nfs $PWD/.xinitrc $HOME/.xinitrc
 ln -nfs $PWD/.xmobarrc $HOME/.xmobarrc
 ln -nfs $PWD/.xmonad $HOME/.xmonad

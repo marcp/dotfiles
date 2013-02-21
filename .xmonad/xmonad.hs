@@ -116,7 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "xscreensaver-command -lock")
 
   , ((modMask, xK_p),
-     spawn "exe=`dmenu_run` && eval \"exec $exe\"")
+     spawn "dmenu_run")
 
   -- Take a screenshot
   , ((0, xK_Print),
