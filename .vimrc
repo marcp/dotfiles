@@ -25,6 +25,10 @@ Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'int3/vim-extradite'
 Bundle 'jcf/vim-latex'
+Bundle 'jgdavey/tslime.vim'
+Bundle 'jgdavey/vim-turbux'
+Bundle 'juvenn/mustache.vim.git'
+Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -32,6 +36,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'noprompt/vim-yardoc'
 Bundle 'NSinopoli/paredit.vim'
 Bundle 'NSinopoli/yaml-vim'
@@ -40,7 +45,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rosenfeld/conque-term'
 Bundle 'scrooloose/syntastic'
-Bundle 'sjbach/lusty'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'SirVer/ultisnips'
@@ -103,6 +107,12 @@ let g:rbpt_colorpairs = [
 
 " SLIMV settings
 let g:slimv_swank_cmd = '! xterm -e sbcl --load /home/nick/.vim/bundle/slimv/slime/start-swank.lisp &'
+
+" Use custom turbux mappings
+let g:no_turbux_mappings = 1
+
+" Prefix turbux commands with "bundle exec"
+let g:turbux_command_prefix = 'bundle exec' "
 
 " Set color scheme
 set background=dark
@@ -260,6 +270,13 @@ cnoremap <C-n> <Down>
 nmap <leader>r :CtrlPBuffer<CR>
 nmap <leader>m :CtrlPMRUFiles<CR>
 
+" Turbux mappings
+map <leader>lt <Plug>SendTestToTmux
+map <leader>lT <Plug>SendFocusedTestToTmux
+
+" TSlime mappings
+nmap <leader>lv <Plug>SetTmuxVars
+
 " Indent cursor in block after {[( characters
 inoremap {<CR> {<CR>}<C-O>O
 inoremap [<CR> [<CR>]<C-O>O
@@ -318,6 +335,8 @@ nmap <leader>a: :Tab /:<CR>
 vmap <leader>a: :Tab /:<CR>
 nmap <leader>a- :Tab /=<CR>
 vmap <leader>a- :Tab /=<CR>
+nmap <leader>ah :Tab/\w: \zs/l0l1<CR>
+vmap <leader>ah :Tab/\w: \zs/l0l1<CR>
 
 " Jump to matching pairs easily with Tab
 nnoremap <Tab> %

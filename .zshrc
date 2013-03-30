@@ -28,6 +28,9 @@ alias thin="bundle exec thin start"
 alias mk="tmux kill-session -t "
 alias v="fasd -fe vim"
 
+unalias cp
+unalias rm
+
 # Functions
 function ru() {
     local pid=$(pgrep -af 'unicorn_rails' | grep master | awk '{print $1}')
