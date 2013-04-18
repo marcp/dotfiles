@@ -20,4 +20,4 @@ if (( $+commands[fortune] )); then
   print
 fi
 
-test -c /dev/pts/0 || startx
+test -c /dev/pts/0 || startx -- -extension GLX

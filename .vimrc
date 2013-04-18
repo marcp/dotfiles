@@ -17,6 +17,7 @@ Bundle 'chriskempson/base16-vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'danchoi/ri.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'ervandew/screen'
 Bundle 'ervandew/supertab'
 Bundle 'fs111/pydoc.vim'
@@ -73,14 +74,14 @@ filetype plugin indent on
 " Turn syntax highlighting on
 syntax on
 
-" Set the <Leader> for combo commands
-let mapleader = ","
-
-" Change ctrlp to use ,t
+" Change ctrlp to use \t
 let g:ctrlp_map = '<leader>t'
 
 " Have ctrlp use the directory we're currently in
 let g:ctrlp_working_path_mode = 0
+
+" Show dotfiles
+let g:ctrlp_show_hidden = 1
 
 " Use fancy symbols
 let g:Powerline_symbols = 'fancy'
@@ -110,9 +111,6 @@ let g:slimv_swank_cmd = '! xterm -e sbcl --load /home/nick/.vim/bundle/slimv/sli
 
 " Use custom turbux mappings
 let g:no_turbux_mappings = 1
-
-" Prefix turbux commands with "bundle exec"
-let g:turbux_command_prefix = 'bundle exec' "
 
 " Set color scheme
 set background=dark
@@ -252,7 +250,7 @@ set noscrollbind
 " Split horizontal windows below current window
 set splitbelow
 
-" Easily edit the vimrc file with ,ev
+" Easily edit the vimrc file with \ev
 nmap <leader>ev :e $MYVIMRC<CR>
 
 " Map ConqueTermSplit to ,cz
@@ -267,28 +265,33 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " Easier CtrlP commands
-nmap <leader>r :CtrlPBuffer<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>m :CtrlPMRUFiles<CR>
 
 " Turbux mappings
-map <leader>lt <Plug>SendTestToTmux
-map <leader>lT <Plug>SendFocusedTestToTmux
+map <leader>lr <Plug>SendTestToTmux
+map <leader>lR <Plug>SendFocusedTestToTmux
 
 " TSlime mappings
 nmap <leader>lv <Plug>SetTmuxVars
+nmap <leader>lv <Plug>SetTmuxVars
+nmap <leader>lt :call Send_to_Tmux("script/test " . expand("%") . "\n")<CR>
 
 " Indent cursor in block after {[( characters
 inoremap {<CR> {<CR>}<C-O>O
 inoremap [<CR> [<CR>]<C-O>O
 inoremap (<CR> (<CR>)<C-O>O
 
-" Map Gundo to ,u
+" Map select all
+nmap <leader>o ggVG
+
+" Map Gundo to \u
 nnoremap <leader>u :GundoToggle<CR>
 
 " Remap filetab controls
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-t> :tabnew<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-t> :tabnew<CR>
 map <A-1> 1gt
 map <A-2> 2gt
 map <A-3> 3gt
@@ -319,10 +322,10 @@ vmap <C-A-j> ]egv
 nnoremap <A-P> P'[v']=
 nnoremap <A-p> p'[v']=
 
-" map ,f to display all lines with keyword under cursor and ask which one to jump to
-nmap ,f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" map \f to display all lines with keyword under cursor and ask which one to jump to
+nmap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" Yank/paste to the OS clipboard with ,y and ,p
+" Yank/paste to the OS clipboard with \y and \p
 nmap <leader>y "+y
 nmap <leader>Y "+yy
 nmap <leader>p "+p
@@ -341,12 +344,6 @@ vmap <leader>ah :Tab/\w: \zs/l0l1<CR>
 " Jump to matching pairs easily with Tab
 nnoremap <Tab> %
 vnoremap <Tab> %
-
-" No longer need to press the Shift key for commands
-nnoremap ; :
-
-" Press ; twice to get original functionality
-noremap ;; ;
 
 " Alt-x/z deletes blank line below/above, and Alt-j/k inserts.
 nnoremap <silent><A-x> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
