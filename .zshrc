@@ -18,6 +18,7 @@ eval "$(rbenv init -)"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Aliases
+alias history="history 1 -1"
 alias h="history | grep "
 alias guard="~/.gem/ruby/1.9.1/bin/guard "
 alias scheme="rlwrap -r -c -f $HOME/.scheme_completion scheme"

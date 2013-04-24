@@ -34,7 +34,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -49,6 +48,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
@@ -237,9 +237,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Disable folding
 set nofoldenable
 
-" Set font
-set gfn=Inconsolata-dz\ 10
-
 " Disable bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -249,6 +246,9 @@ set noscrollbind
 
 " Split horizontal windows below current window
 set splitbelow
+
+" No more ri tooltips
+set noballooneval
 
 " Easily edit the vimrc file with \ev
 nmap <leader>ev :e $MYVIMRC<CR>
@@ -383,7 +383,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 " Autostrip trailing whitespace
-autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Opens man pages using ConqueTerm
 fun! ConqueMan()
@@ -432,4 +432,7 @@ if has("gui_running")
 
     " Set size
     set lines=50 columns=177
+
+    " Set font
+    set gfn=Inconsolata-dz\ for\ Powerline\ Medium 10
 endif
