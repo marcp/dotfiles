@@ -1,7 +1,3 @@
-.xmonad/xmonad-i386-linux
-.xmonad/xmonad.errors
-.xmonad/xmonad.hi
-.xmonad/xmonad.o
 .vim/bundle
 .vim/undo
 .vim/view

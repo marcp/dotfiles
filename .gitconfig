@@ -1,18 +1,12 @@
 [user]
-	name = Nick Sinopoli
-	email = NSinopoli@gmail.com
+	name = Marc Poris
+	email = mporis@airadvice.com
 [alias]
 	st = status
-	ci = commit
-    co = checkout
+	vvv = branch -avv
 [color]
 	ui = true
-[diff]
-	tool = gvimdiff
-[merge]
-	tool = gvimdiff
-[difftool]
-	prompt = false
 [core]
+	editor = vi
 	autocrlf = input
-	excludesfile = ~/.cvsignore
+	excludesfile = ~/.gitignore_global
