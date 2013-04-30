@@ -18,6 +18,7 @@ eval "$(rbenv init -)"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Aliases
+alias ls="ls --color=auto"
 alias history="history 1 -1"
 alias h="history | grep "
 alias guard="~/.gem/ruby/1.9.1/bin/guard "
@@ -27,10 +28,7 @@ alias transcribe="/home/nick/transcribe/transcribe"
 alias par="pulseaudio --kill; pulseaudio --start"
 alias thin="bundle exec thin start"
 alias mk="tmux kill-session -t "
-alias v="fasd -fe vim"
-
-unalias cp
-unalias rm
+alias ll="ls -al"
 
 # Functions
 function ru() {
