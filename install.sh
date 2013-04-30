@@ -3,7 +3,7 @@
 PWD="$( cd "$( dirname "$0" )" && pwd )"
 
 ln -nfs $PWD/.dircolors $HOME/.dircolors
-ln -nfs $PWD/.fonts/* $HOME/.fonts
+ln -nfs $PWD/.fonts $HOME/.fonts
 ln -nfs $PWD/.gitconfig $HOME/.gitconfig
 ln -nfs $PWD/.gitignore_global $HOME/.gitignore_global
 ln -nfs $PWD/.inputrc $HOME/.inputrc

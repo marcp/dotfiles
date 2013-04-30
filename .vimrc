@@ -1,4 +1,4 @@
-" Ensure that our plugins work properly
+"Ensure that our plugins work properly
 set nocompatible
 
 " Use vundle to handle plugins
@@ -14,7 +14,6 @@ Bundle 'adimit/prolog.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chriskempson/base16-vim'
-Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'danchoi/ri.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -23,7 +22,6 @@ Bundle 'ervandew/supertab'
 Bundle 'fs111/pydoc.vim'
 Bundle 'gg/python.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'guns/vim-clojure-static'
 Bundle 'int3/vim-extradite'
 Bundle 'jcf/vim-latex'
 Bundle 'jgdavey/tslime.vim'
@@ -37,6 +35,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/zencoding-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'ngmy/vim-rubocop'
 Bundle 'noprompt/vim-yardoc'
 Bundle 'NSinopoli/paredit.vim'
 Bundle 'NSinopoli/yaml-vim'
@@ -48,7 +47,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'SirVer/ultisnips'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
@@ -63,7 +61,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/matchparenpp'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'xolox/vim-lua-ftplugin'
@@ -82,9 +79,6 @@ let g:ctrlp_working_path_mode = 0
 
 " Show dotfiles
 let g:ctrlp_show_hidden = 1
-
-" Use fancy symbols
-let g:Powerline_symbols = 'fancy'
 
 " Set Taglist width
 let Tlist_WinWidth = 50
@@ -106,16 +100,12 @@ let g:rbpt_colorpairs = [
     \ ['black',       '#dc322f'],
     \ ]
 
-" SLIMV settings
-let g:slimv_swank_cmd = '! xterm -e sbcl --load /home/nick/.vim/bundle/slimv/slime/start-swank.lisp &'
-
 " Use custom turbux mappings
 let g:no_turbux_mappings = 1
 
 " Set color scheme
 set background=dark
 "colorscheme base16-railscasts
-colorscheme Tomorrow-Night
 
 " Hide buffers instead of closing them
 set hidden
@@ -124,9 +114,6 @@ set hidden
 set ignorecase
 " Ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smartcase
-
-" Show line numbers relative to cursor
-set relativenumber
 
 " Save undo history
 set undofile
@@ -155,16 +142,13 @@ set autowrite
 set encoding=utf-8
 
 " Underline the current line, for quick orientation
-set cursorline
+" set cursorline
 
 " Show (partial) commands (or size of selection in Visual mode) in the status line
 set showcmd
 
 " Always show what mode we're currently editing in
 set showmode
-
-" Highlight 80th column
-set cc=80
 
 " Jump 5 lines when running out of screen real estate
 set scrolljump=5
@@ -194,16 +178,7 @@ set wildignore+=/**/node_modules/**,/**/vendor
 " n    - set name of viminfo file
 set viminfo='20,\"80,:200,%,n~/.viminfo
 
-" Cache clojure class path
-set viminfo+=!
-
 set history=200
-
-" Search/replace "globally" (on a line) by default
-set gdefault
-
-" Use incremental searching
-set incsearch
 
 " Do not highlight search results
 set nohlsearch
@@ -237,6 +212,9 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Disable folding
 set nofoldenable
 
+" Set font
+set gfn=Inconsolata-dz\ 10
+
 " Disable bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -246,9 +224,6 @@ set noscrollbind
 
 " Split horizontal windows below current window
 set splitbelow
-
-" No more ri tooltips
-set noballooneval
 
 " Easily edit the vimrc file with \ev
 nmap <leader>ev :e $MYVIMRC<CR>
@@ -383,7 +358,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 " Autostrip trailing whitespace
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 
 " Opens man pages using ConqueTerm
 fun! ConqueMan()
@@ -409,30 +384,12 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
-" Don't use delimitmate with .clj
-au FileType clojure let b:delimitMate_autoclose = 0
-
 " Toggle RainbowParentheses automatically
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Gvim settings
-if has("gui_running")
-    " Remove menu bar
-    set guioptions-=m
+let vimrubocop_rubocop_cmd = "bundle exec rubocop"
 
-    " Remove toolbar
-    set guioptions-=T
-
-    " Remove scrollbar
-    set guioptions+=LlRrb
-    set guioptions-=LlRrb
-
-    " Set size
-    set lines=50 columns=177
-
-    " Set font
-    set gfn=Inconsolata-dz\ for\ Powerline\ Medium 10
-endif
+au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2
