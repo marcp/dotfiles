@@ -393,3 +393,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let vimrubocop_rubocop_cmd = "bundle exec rubocop"
 
 au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2
+
+" ctrl-k, ctrl-j to go up/down in command history
+cmap <C-k> <Down>
+cmap <C-j> <Up>
