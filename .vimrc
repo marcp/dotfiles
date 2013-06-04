@@ -266,7 +266,8 @@ nnoremap <leader>u :GundoToggle<CR>
 " Remap filetab controls
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
-map <C-t> :tabnew<CR>
+" Don't map C-T because it conflicts with ctags
+" map <C-t> :tabnew<CR>
 map <A-1> 1gt
 map <A-2> 2gt
 map <A-3> 3gt
