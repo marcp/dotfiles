@@ -64,6 +64,8 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " Enable detection, plugins, and indenting in one step
 filetype plugin indent on
