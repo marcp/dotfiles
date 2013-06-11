@@ -8,6 +8,7 @@ ln -nfs $PWD/.gitconfig $HOME/.gitconfig
 ln -nfs $PWD/.gitignore_global $HOME/.gitignore_global
 ln -nfs $PWD/.inputrc $HOME/.inputrc
 ln -nfs $PWD/.tmux.conf $HOME/.tmux.conf
+ln -nfs $PWD/.tmux.conf.local $HOME/.tmux.conf.local
 ln -nfs $PWD/.vim $HOME/.vim
 ln -nfs $PWD/.vimrc $HOME/.vimrc
 ln -nfs $PWD/.xinitrc $HOME/.xinitrc
