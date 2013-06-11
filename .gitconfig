@@ -10,3 +10,5 @@
 	editor = vi
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
+[github]
+	user = marcp
