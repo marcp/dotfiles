@@ -63,7 +63,6 @@ Bundle 'vim-scripts/matchparenpp'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
@@ -400,3 +399,5 @@ au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2
 " ctrl-k, ctrl-j to go up/down in command history
 cmap <C-k> <Down>
 cmap <C-j> <Up>
+
+let g:gist_post_private = 1
