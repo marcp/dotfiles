@@ -2,3 +2,4 @@ autocmd LocationChange .* js modes.passAllKeys = false
 autocmd LocationChange fargo.io js modes.passAllKeys = true
 autocmd LocationChange docs.fargo.io js modes.passAllKeys = false
 autocmd LocationChange docs.google.com/document js modes.passAllKeys = true
+autocmd LocationChange docs.google.com/spreadsheet js modes.passAllKeys = true

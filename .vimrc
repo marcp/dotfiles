@@ -65,6 +65,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'scrooloose/nerdtree'
 
 " Enable detection, plugins, and indenting in one step
 filetype plugin indent on
@@ -307,6 +308,8 @@ nmap <leader>y "+y
 nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
+
+nmap <leader>yf :let @+=expand("%")<CR>
 
 " Alignment mappings
 nmap <leader>a= :Tab /=><CR>
