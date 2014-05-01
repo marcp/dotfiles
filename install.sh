@@ -11,11 +11,3 @@ ln -nfs $PWD/.tmux.conf $HOME/.tmux.conf
 ln -nfs $PWD/.tmux.conf.local $HOME/.tmux.conf.local
 ln -nfs $PWD/.vim $HOME/.vim
 ln -nfs $PWD/.vimrc $HOME/.vimrc
-ln -nfs $PWD/.xinitrc $HOME/.xinitrc
-ln -nfs $PWD/.zlogin $HOME/.zlogin
-ln -nfs $PWD/.zlogout $HOME/.zlogout
-ln -nfs $PWD/.zprezto $HOME/.zprezto
-ln -nfs $PWD/.zpreztorc $HOME/.zpreztorc
-ln -nfs $PWD/.zprofile $HOME/.zprofile
-ln -nfs $PWD/.zshenv $HOME/.zshenv
-ln -nfs $PWD/.zshrc $HOME/.zshrc
