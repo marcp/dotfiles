@@ -111,6 +111,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PATH="$HOME/.rbenv/bin:/opt/rubymine/bin:$PATH"
+export EDITOR='vim'
+export PAGER='less -X'
 
 source /opt/Ansible/ansible/hacking/env-setup >& /dev/null
 
