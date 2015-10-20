@@ -22,6 +22,7 @@ Bundle 'ervandew/supertab'
 Bundle 'fs111/pydoc.vim'
 Bundle 'gg/python.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'int3/vim-extradite'
 Bundle 'jcf/vim-latex'
 Bundle 'jgdavey/tslime.vim'
@@ -32,13 +33,11 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'noprompt/vim-yardoc'
-Bundle 'NSinopoli/paredit.vim'
-Bundle 'NSinopoli/yaml-vim'
 Bundle 'othree/html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
@@ -46,7 +45,6 @@ Bundle 'rosenfeld/conque-term'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
-Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
@@ -56,7 +54,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/matchparenpp'
@@ -90,17 +87,36 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Colors for RainbowParentheses
 let g:rbpt_colorpairs = [
-    \ ['brown',       '#268bd2'],
-    \ ['Darkblue',    '#2aa198'],
-    \ ['darkgray',    '#859900'],
-    \ ['darkgreen',   '#6c71c4'],
-    \ ['darkcyan',    '#d75f00'],
-    \ ['darkred',     '#fdf6e3'],
-    \ ['darkmagenta', '#b58900'],
-    \ ['brown',       '#cb4b16'],
-    \ ['gray',        '#586e75'],
-    \ ['black',       '#dc322f'],
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
     \ ]
+
+" let g:rbpt_colorpairs = [
+"     \ ['brown',       '#268bd2'],
+"     \ ['Darkblue',    '#2aa198'],
+"     \ ['darkgray',    '#859900'],
+"     \ ['darkgreen',   '#6c71c4'],
+"     \ ['darkcyan',    '#d75f00'],
+"     \ ['darkred',     '#fdf6e3'],
+"     \ ['darkmagenta', '#b58900'],
+"     \ ['brown',       '#cb4b16'],
+"     \ ['gray',        '#586e75'],
+"     \ ['black',       '#dc322f'],
+"     \ ]
 
 " Use custom turbux mappings
 let g:no_turbux_mappings = 1
@@ -191,10 +207,10 @@ set laststatus=2
 
 " Editing settings
 
-" Convert tabs to 4 spaces
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+" Convert tabs to 2 spaces
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 " Allow backspacing over everything
@@ -398,9 +414,13 @@ au Syntax * RainbowParenthesesLoadBraces
 let vimrubocop_rubocop_cmd = "bundle exec rubocop"
 
 au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2
+au FileType javascript set softtabstop=2 tabstop=2 shiftwidth=2
 
 " ctrl-k, ctrl-j to go up/down in command history
 cmap <C-k> <Down>
 cmap <C-j> <Up>
+
+map <C-w>J 30<C-w><
+map <C-w>K 30<C-w>>
 
 let g:gist_post_private = 1
