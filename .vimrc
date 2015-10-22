@@ -96,7 +96,7 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
+    \ ['cyan',        'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
@@ -104,19 +104,6 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
-
-" let g:rbpt_colorpairs = [
-"     \ ['brown',       '#268bd2'],
-"     \ ['Darkblue',    '#2aa198'],
-"     \ ['darkgray',    '#859900'],
-"     \ ['darkgreen',   '#6c71c4'],
-"     \ ['darkcyan',    '#d75f00'],
-"     \ ['darkred',     '#fdf6e3'],
-"     \ ['darkmagenta', '#b58900'],
-"     \ ['brown',       '#cb4b16'],
-"     \ ['gray',        '#586e75'],
-"     \ ['black',       '#dc322f'],
-"     \ ]
 
 " Use custom turbux mappings
 let g:no_turbux_mappings = 1
