@@ -1,0 +1,19 @@
+[web]
+cacerts = /etc/hg-ca-roots.pem
+
+[ui]
+username = Marc Poris <marc.poris@spendwellhealth.com>
+merge = internal:merge
+ignore = ~/.hgignore
+
+[extensions]
+shelve=
+color=
+graphlog=
+swh_scm_tools=
+
+[merge-patterns]
+.hgtags=internal:tagmerge
+
+[color]
+status.modified = cyan bold
