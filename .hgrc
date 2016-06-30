@@ -7,10 +7,12 @@ merge = internal:merge
 ignore = ~/.hgignore
 
 [extensions]
+rebase=
 shelve=
 color=
 graphlog=
 swh_scm_tools=
+transplant=
 
 [merge-patterns]
 .hgtags=internal:tagmerge

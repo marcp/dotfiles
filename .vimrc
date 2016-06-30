@@ -350,7 +350,7 @@ nnoremap <leader>s <C-w>v<C-w>l
 nnoremap H <C-w>h
 nnoremap L <C-w>l
 
-" Ack - betterthangrep.com
+" Ack - betterthangrep.com - defaults to using ag (The Silver Searcher).
 nnoremap <leader>z :Ack
 
 " Sorts CSS (content between the braces)
