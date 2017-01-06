@@ -411,3 +411,7 @@ map <C-w>J 30<C-w><
 map <C-w>K 30<C-w>>
 
 let g:gist_post_private = 1
+
+set list
+set listchars=tab:->
+set number

@@ -4,10 +4,11 @@
 [alias]
 	st = status
 	vvv = branch -avv
+	branches = branch -avv
 [color]
 	ui = true
 [core]
-	editor = vi
+	editor = vim
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 [merge]

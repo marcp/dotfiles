@@ -13,6 +13,7 @@ color=
 graphlog=
 swh_scm_tools=
 transplant=
+purge=
 
 [merge-patterns]
 .hgtags=internal:tagmerge
