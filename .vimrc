@@ -4,65 +4,67 @@ set nocompatible
 " Use vundle to handle plugins
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Github repos
-Bundle 'adimit/prolog.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'chriskempson/base16-vim'
-Bundle 'danchoi/ri.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'ervandew/screen'
-Bundle 'ervandew/supertab'
-Bundle 'fs111/pydoc.vim'
-Bundle 'gg/python.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'int3/vim-extradite'
-Bundle 'jcf/vim-latex'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'jgdavey/vim-turbux'
-Bundle 'juvenn/mustache.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'mattn/emmet-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'ngmy/vim-rubocop'
-Bundle 'noprompt/vim-yardoc'
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
-Bundle 'rosenfeld/conque-term'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-foreplay'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/camelcasemotion'
-Bundle 'vim-scripts/matchparenpp'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'scrooloose/nerdtree'
+Plugin 'adimit/prolog.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'danchoi/ri.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ervandew/screen'
+Plugin 'ervandew/supertab'
+Plugin 'fs111/pydoc.vim'
+Plugin 'gg/python.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'int3/vim-extradite'
+Plugin 'jcf/vim-latex'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-turbux'
+Plugin 'juvenn/mustache.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mattn/emmet-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'noprompt/vim-yardoc'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Raimondi/delimitMate'
+Plugin 'rosenfeld/conque-term'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-foreplay'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/camelcasemotion'
+Plugin 'vim-scripts/matchparenpp'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
 
 " Enable detection, plugins, and indenting in one step
 filetype plugin indent on
@@ -207,12 +209,12 @@ set backspace=indent,eol,start
 set nowrap
 set textwidth=0
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 " Show current git branch
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Disable folding
 set nofoldenable
@@ -393,10 +395,10 @@ au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
 " Toggle RainbowParentheses automatically
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 let vimrubocop_rubocop_cmd = "bundle exec rubocop"
 

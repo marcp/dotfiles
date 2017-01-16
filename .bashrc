@@ -87,8 +87,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lldir='ls -la | grep ^d'
 alias go='xdg-open'
+alias prox='ember s --proxy http://localhost:3000/'
 alias vpn='sudo openvpn --config /home/bonzo/vpn/client.ovpn'
 alias shedmouse='xset m 3 1'
+alias rmvimtemp='rm -rf ~/.vim/view'
+alias rmorig='rm `find . -name *.orig`'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

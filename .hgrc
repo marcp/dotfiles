@@ -1,6 +1,3 @@
-[web]
-cacerts = /etc/hg-ca-roots.pem
-
 [ui]
 username = Marc Poris <marc.poris@spendwellhealth.com>
 merge = internal:merge
@@ -11,7 +8,7 @@ rebase=
 shelve=
 color=
 graphlog=
-swh_scm_tools=
+; swh_scm_tools=
 transplant=
 purge=
 
