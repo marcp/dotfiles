@@ -10,16 +10,13 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " Github repos
-Plugin 'adimit/prolog.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'danchoi/ri.vim'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/screen'
 Plugin 'ervandew/supertab'
-Plugin 'fs111/pydoc.vim'
 Plugin 'gg/python.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -48,7 +45,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-foreplay'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rails'
@@ -392,8 +388,9 @@ autocmd FileChangedShell * echohl WarningMsg | echo "File changed shell." | echo
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
 
 " Enable folding without the use of markers
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+" NOTE: Commenting these 2 lines out to see if rails.vim will work better
+" au BufWinLeave * silent! mkview
+" au BufWinEnter * silent! loadview
 
 " Toggle RainbowParentheses automatically
 au VimEnter * RainbowParenthesesToggle
@@ -414,3 +411,4 @@ map <C-w>J 30<C-w><
 map <C-w>K 30<C-w>>
 
 let g:gist_post_private = 1
+set number
