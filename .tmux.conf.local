@@ -4,12 +4,6 @@
 # clearer current-pane contrast/coloring
 set -g status-bg green
 set -g status-fg black
-set -g status-left-bg green
-set -g status-left-fg white
 set -g status-left-length 30 # allow more length, for longer hostnames
 set -g status-left '#30T  '
-set -g window-status-current-bg black
-set -g window-status-current-fg white
-set -g status-right-fg black
-set -g status-right-bg green
 set -g status-right '%H:%M, %a %h %e '

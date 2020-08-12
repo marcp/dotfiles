@@ -113,4 +113,4 @@ fi
 export EDITOR='vim'
 export PAGER='less -X'
 
-source /opt/Ansible/ansible/hacking/env-setup >& /dev/null
+export BASH_SILENCE_DEPRECATION_WARNING=1
